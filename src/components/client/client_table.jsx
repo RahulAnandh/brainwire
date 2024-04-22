@@ -17,8 +17,10 @@ import {
   Col,
   Divider,
   Avatar,
+  Typography,
 } from "antd";
 import Highlighter from "react-highlight-words";
+const { Text, Link } = Typography;
 
 const ClientTable = (props) => {
   const [searchText, setSearchText] = useState("");
@@ -254,7 +256,6 @@ const ClientTable = (props) => {
         size="small"
         loading={props?.loading}
       />
-      {console.log("1---1:", props)}
       <Modal
         title="User Details"
         x
@@ -276,99 +277,129 @@ const ClientTable = (props) => {
           </Col>
           <Col style={{ width: "80%" }}>
             <Row>
-              <Col style={{ textAlign: "left", width: "50%" }}>ID</Col>{" "}
+              <Col style={{ textAlign: "left", width: "50%" }}>
+                <Text strong>ID</Text>
+              </Col>
               <Col style={{ textAlign: "right", width: "50%" }}>
                 {modalData.data.id}
               </Col>
             </Row>
             <Row>
-              <Col style={{ textAlign: "left", width: "50%" }}>Name</Col>{" "}
+              <Col style={{ textAlign: "left", width: "50%" }}>
+                <Text strong>Name</Text>
+              </Col>{" "}
               <Col style={{ textAlign: "right", width: "50%" }}>
                 {modalData.data.name}
               </Col>
             </Row>
             <Row>
-              <Col style={{ textAlign: "left", width: "50%" }}>User Name</Col>{" "}
+              <Col style={{ textAlign: "left", width: "50%" }}>
+                <Text strong>User Name</Text>
+              </Col>{" "}
               <Col style={{ textAlign: "right", width: "50%" }}>
                 {modalData.data.username}
               </Col>
             </Row>
           </Col>
         </Row>
-
-        <Divider plain>Contact</Divider>
+        <Divider plain>
+          <Text strong>Contact</Text>
+        </Divider>{" "}
         <Row>
-          <Col style={{ textAlign: "left", width: "50%" }}>E Mail</Col>{" "}
+          <Col style={{ textAlign: "left", width: "50%" }}>
+            <Text strong>E Mail</Text>
+          </Col>{" "}
           <Col style={{ textAlign: "right", width: "50%" }}>
             {modalData.data.email}
           </Col>
         </Row>
         <Row>
-          <Col style={{ textAlign: "left", width: "50%" }}>Website</Col>{" "}
+          <Col style={{ textAlign: "left", width: "50%" }}>
+            <Text strong>Website</Text>
+          </Col>{" "}
           <Col style={{ textAlign: "right", width: "50%" }}>
             {modalData.data.website}
           </Col>
         </Row>
         <Row>
-          <Col style={{ textAlign: "left", width: "50%" }}>Phone Number</Col>{" "}
+          <Col style={{ textAlign: "left", width: "50%" }}>
+            <Text strong>Phone Number</Text>
+          </Col>{" "}
           <Col style={{ textAlign: "right", width: "50%" }}>
             {modalData.data.phone}
           </Col>
         </Row>
-        <Divider plain>Address</Divider>
-
+        <Divider plain>
+          <Col style={{ textAlign: "left", width: "50%" }}>
+            <Text strong>Address</Text>
+          </Col>{" "}
+        </Divider>
         <Row>
-          <Col style={{ textAlign: "left", width: "50%" }}>Suite</Col>{" "}
+          <Col style={{ textAlign: "left", width: "50%" }}>
+            <Text strong>Suite</Text>
+          </Col>{" "}
           <Col style={{ textAlign: "right", width: "50%" }}>
             {modalData.data.suite}
           </Col>
         </Row>
         <Row>
-          <Col style={{ textAlign: "left", width: "50%" }}>Street</Col>{" "}
+          <Col style={{ textAlign: "left", width: "50%" }}>
+            <Text strong>Street</Text>
+          </Col>{" "}
           <Col style={{ textAlign: "right", width: "50%" }}>
             {modalData.data.street}
           </Col>
         </Row>
         <Row>
-          <Col style={{ textAlign: "left", width: "50%" }}>City</Col>{" "}
+          <Col style={{ textAlign: "left", width: "50%" }}>
+            <Text strong>City</Text>
+          </Col>{" "}
           <Col style={{ textAlign: "right", width: "50%" }}>
             {modalData.data.city}
           </Col>
         </Row>
         <Row>
-          <Col style={{ textAlign: "left", width: "50%" }}>Zip Code</Col>{" "}
+          <Col style={{ textAlign: "left", width: "50%" }}>
+            <Text strong>Zip Code</Text>
+          </Col>{" "}
           <Col style={{ textAlign: "right", width: "50%" }}>
             {modalData.data.zipcode}
           </Col>
         </Row>
-        <Divider plain>Company Details</Divider>
-
+        <Divider plain>
+          <Text strong>Company Details</Text>
+        </Divider>
         <Row>
-          <Col style={{ textAlign: "left", width: "50%" }}>Company Name</Col>{" "}
+          <Col style={{ textAlign: "left", width: "50%" }}>
+            <Text strong>Company Name</Text>
+          </Col>{" "}
           <Col style={{ textAlign: "right", width: "50%" }}>
             {modalData.data.company_name}
           </Col>
         </Row>
         <Row>
-          <Col style={{ textAlign: "left", width: "50%" }}>Company BS</Col>{" "}
+          <Col style={{ textAlign: "left", width: "50%" }}>
+            <Text strong>Company BS</Text>
+          </Col>{" "}
           <Col style={{ textAlign: "right", width: "50%" }}>
             {modalData.data.company_bs}
           </Col>
         </Row>
         <Row>
           <Col style={{ textAlign: "left", width: "50%" }}>
-            Company Catch Phrase
-          </Col>{" "}
+            <Text strong>Company Catch Phrase</Text>
+          </Col>
           <Col style={{ textAlign: "right", width: "50%" }}>
             {modalData.data.company_catch_phrase}
           </Col>
         </Row>
-        <Divider plain>Location Details</Divider>
-
+        <Divider plain>
+          <Text strong>Location Detailis</Text>
+        </Divider>
         <Row>
           <Col style={{ textAlign: "left", width: "50%" }}>
-            Latitude and Longitude
-          </Col>{" "}
+            <Text strong>Latitude and Longitude</Text>
+          </Col>
           <Col style={{ textAlign: "right", width: "50%" }}>
             {modalData.data.lat} , {modalData.data.lng}
           </Col>

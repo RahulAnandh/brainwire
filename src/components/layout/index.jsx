@@ -2,9 +2,8 @@ import React, { useState, useEffect } from "react";
 import {
   MenuFoldOutlined,
   MenuUnfoldOutlined,
-  UploadOutlined,
-  UserOutlined,
-  VideoCameraOutlined,
+  TeamOutlined,
+  DashboardOutlined,
 } from "@ant-design/icons";
 import { Button, Layout, Menu, theme } from "antd";
 import {
@@ -87,12 +86,12 @@ const LayoutIndex = (data) => {
           items={[
             {
               key: "dashboard",
-              icon: <UserOutlined />,
+              icon: <DashboardOutlined />,
               label: "Dashboard",
             },
             {
               key: "user_list",
-              icon: <VideoCameraOutlined />,
+              icon: <TeamOutlined />,
               label: "User List",
             },
           ]}
