@@ -10,7 +10,11 @@ const LoginForm = (props) => {
         remember: true,
       }}
       onFinish={props?.onFinish}
-      style={{ padding: "20px" }}
+      style={{
+        paddingTop: "40px",
+        paddingLeft: "25px",
+        paddingRight: "25px",
+      }}
     >
       <Form.Item
         name="username"
