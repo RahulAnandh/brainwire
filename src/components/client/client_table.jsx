@@ -186,7 +186,7 @@ const ClientTable = (props) => {
       sortDirections: ["descend", "ascend"],
       render: (_, record) => {
         return (
-          <a>
+          <a onClick={() => window.open(`https://www.${record.website}`)}>
             <Space>
               <GlobalOutlined />
               {record.website}
