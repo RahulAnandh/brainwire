@@ -1,5 +1,5 @@
 import { Row, Col } from "antd";
 const DashBoardIndex = (props) => {
-  return <>Dashboard </>;
+  return <>Dashboard Page</>;
 };
 export default DashBoardIndex;

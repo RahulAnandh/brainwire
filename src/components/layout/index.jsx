@@ -6,19 +6,11 @@ import {
   DashboardOutlined,
 } from "@ant-design/icons";
 import { Button, Layout, Menu, theme } from "antd";
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-  useNavigate,
-  Link,
-} from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import axios from "axios";
-
 import DashBoardIndex from "../dashboard";
 import ClientIndex from "../client";
 import NoPage from "../error_404";
-
 const { Header, Sider, Content } = Layout;
 
 const LayoutIndex = (data) => {
@@ -40,39 +32,31 @@ const LayoutIndex = (data) => {
   };
   useEffect(() => {
     setUserData({ ...userData, loading: true });
-    axios
-      .get("https://jsonplaceholder.typicode.com/users")
-      .then((response) => {
-        console.log(response.data);
-        const newData = response.data.map((obj) => {
-          console.log(obj);
-          return {
-            city: obj.address.city,
-            lat: obj.address.geo.lat,
-            lng: obj.address.geo.lng,
-            street: obj.address.street,
-            address: `${obj.address.suite}, ${obj.address.street},${obj.address.city}`,
-            suite: obj.address.suite,
-            zipcode: obj.address.zipcode,
-            company_bs: obj.company.bs,
-            company_catch_phrase: obj.company.catchPhrase,
-            company_name: obj.company.name,
-            email: obj.email,
-            id: obj.id,
-            name: obj.name,
-            phone: obj.phone,
-            username: obj.username,
-            website: obj.website,
-          };
-        });
-        setUserData({ ...userData, user_list: newData, loading: false });
-      })
-      .then((data) => {
-        //do some stuff
-      })
-      .catch((err) => {
-        //log error
+    axios.get("https://jsonplaceholder.typicode.com/users").then((response) => {
+      console.log(response.data);
+      const newData = response.data.map((obj) => {
+        console.log(obj);
+        return {
+          city: obj.address.city,
+          lat: obj.address.geo.lat,
+          lng: obj.address.geo.lng,
+          street: obj.address.street,
+          address: `${obj.address.suite}, ${obj.address.street},${obj.address.city}`,
+          suite: obj.address.suite,
+          zipcode: obj.address.zipcode,
+          company_bs: obj.company.bs,
+          company_catch_phrase: obj.company.catchPhrase,
+          company_name: obj.company.name,
+          email: obj.email,
+          id: obj.id,
+          name: obj.name,
+          phone: obj.phone,
+          username: obj.username,
+          website: obj.website,
+        };
       });
+      setUserData({ ...userData, user_list: newData, loading: false });
+    });
   }, []);
   return (
     <Layout>
@@ -145,14 +129,6 @@ const LayoutIndex = (data) => {
             />
             <Route path="*" element={<NoPage />} />
           </Routes>
-          {/* <ClientIndex
-            user_list={userData.user_list}
-            loading={userData.loading}
-          />
-          <DashBoardIndex
-            user_list={userData.user_list}
-            loading={userData.loading}
-          /> */}
         </Content>
       </Layout>
     </Layout>
